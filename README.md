@@ -98,3 +98,28 @@ Test the services from Postman or any API client:
 - If services can't communicate, verify they're on the same network
 - Check logs using `docker-compose logs service-name`
 - Ensure environment variables are correctly passed to containers
+
+## Common Docker Commands Reference
+
+Here's a brief explanation of essential Docker commands you'll need during the dockerization process:
+
+- `docker --version`: Displays the installed Docker version on your system.
+- `docker --help`: Shows available Docker commands and their usage options.
+- `docker run nginx`: Creates and starts a container using the nginx image in foreground mode.
+- `docker run -p 8090:80 nginx`: Runs nginx and maps port 80 inside the container to port 8090 on the host.
+- `docker -d -p 8090:80 nginx`: Invalid command (missing 'run').
+- `docker run -d -p 8090:80 nginx`: Runs nginx in detached mode (background) with port mapping.
+- `docker ps`: Lists all currently running containers.
+- `docker run -d -p 8090:80 -name=roshanCoantainer nginx`: Runs nginx with a custom name (note: should be --name, not -name).
+- `docker ps -q`: Shows only the numeric IDs of running containers.
+- `docker ps -a`: Lists all containers, including stopped ones.
+- `docker stop b9a74447373b`: Stops the container with the specified ID.
+- `docker start b9a74447373b`: Starts a previously stopped container.
+- `docker stop $(docker ps -q)`: Stops all currently running containers.
+- `docker rm b9a74447373b`: Removes/deletes the specified container.
+- `docker rm $(docker ps -a -q)`: Removes all containers (running and stopped).
+- `docker images`: Lists all locally available Docker images.
+- `docker rmi nginx`: Removes the nginx image from local storage.
+- `docker logs 8e87a743e1052d61b4cf7d4340a99c51dcc24aa68c5f4378b0f25a4d689f0fef`: Displays logs for the specified container.
+- `docker inspect v`: Inspects detailed information about container 'v'.
+- `docker stats`: Shows real-time resource usage statistics of running containers.
